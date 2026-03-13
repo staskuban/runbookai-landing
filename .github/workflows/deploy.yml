@@ -64,6 +64,9 @@ jobs:
           username: ${{ secrets.DEPLOY_SSH_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
+            if [ ! -d ~/landing ]; then
+              git clone https://github.com/${{ github.repository }}.git ~/landing
+            fi
             cd ~/landing
             git pull origin main
             docker compose pull
