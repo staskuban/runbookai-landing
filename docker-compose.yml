@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web:
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-runbookai}/runbookai-landing:latest
+    container_name: runbookai-landing
+    ports:
+      - "2000:2000"
+    restart: unless-stopped
+    networks:
+      - landing-network
+    environment:
+      - APP_URL=${APP_URL:-http://localhost:3000}
+      - PRICE=${PRICE:-2400}
+      - FUNCTIONS_COUNT=${FUNCTIONS_COUNT:-500}
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:2000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    labels:
+      - "com.runbookai.description=RunbookAI Landing Page"
+      - "com.runbookai.service=web"
+
+networks:
+  landing-network:
+    driver: bridge

@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+docs/
+
+# Node modules (if any)
+node_modules/
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.yml
+Dockerfile
