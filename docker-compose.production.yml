@@ -1,7 +1,7 @@
 services:
   web:
     environment:
-      - APP_URL=https://platform.srebook.tech
+      - APP_URL=https://portal.srebook.tech
       - PRICE=2400
       - FUNCTIONS_COUNT=500
       - GITHUB_REPOSITORY_OWNER=${GITHUB_REPOSITORY_OWNER}
