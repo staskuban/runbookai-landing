@@ -1,0 +1,10 @@
+services:
+  web:
+    environment:
+      - APP_URL=https://platform.srebook.tech
+      - PRICE=2400
+      - FUNCTIONS_COUNT=500
+      - GITHUB_REPOSITORY_OWNER=${GITHUB_REPOSITORY_OWNER}
+    labels:
+      - "com.runbookai.description=RunbookAI Landing Page"
+      - "com.runbookai.service=web"

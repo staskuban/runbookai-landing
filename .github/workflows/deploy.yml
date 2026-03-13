@@ -72,6 +72,6 @@ jobs:
             cd ~/landing
             git pull origin main
             echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            GITHUB_REPOSITORY_OWNER=${{ github.repository_owner }} docker compose pull
-            GITHUB_REPOSITORY_OWNER=${{ github.repository_owner }} docker compose up -d
+            GITHUB_REPOSITORY_OWNER=${{ github.repository_owner }} docker compose -f docker-compose.yml -f docker-compose.production.yml pull
+            GITHUB_REPOSITORY_OWNER=${{ github.repository_owner }} docker compose -f docker-compose.yml -f docker-compose.production.yml up -d
             docker image prune -f
