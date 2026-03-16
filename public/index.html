@@ -9,6 +9,9 @@
 <meta name="robots" content="index, follow"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="canonical" href="https://srebook.tech"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="/styles.css"/>
 
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="SREbook AI - AI-ассистент для документации кода"/>
@@ -46,90 +49,7 @@
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#3b82f6",
-                        "primary-dark": "#1d4ed8",
-                        "accent-cyan": "#06b6d4",
-                        "accent-violet": "#8b5cf6",
-                        "deep-bg": "#0B0F19",
-                        "surface-dark": "#151B2B",
-                    },
-                    fontFamily: {
-                        "display": ["Manrope", "sans-serif"],
-                        "body": ["Noto Sans", "sans-serif"],
-                    },
-                    backgroundImage: {
-                        'hero-glow': 'radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, rgba(139, 92, 246, 0.05) 40%, transparent 100%)',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                },
-            },
-        }
-    </script>
-<style>body {
-    background-color: #f8fafc
-    }.glass-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)
-    }
-.glass-card-hover:hover {
-    background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(139, 92, 246, 0.3);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 15px rgba(139, 92, 246, 0.15)
-    }.mesh-gradient-hero {
-    background-color: #f8fafc;
-    background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 0) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225, 100%, 94%, 1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339, 100%, 96%, 1) 0, transparent 50%)
-    }
-.mesh-dark {
-    background-color: #0f172a;
-    background-image: radial-gradient(at 84% 87%, hsla(247, 72%, 18%, 1) 0, transparent 50%), radial-gradient(at 13% 16%, hsla(216, 85%, 16%, 1) 0, transparent 50%), radial-gradient(at 49% 49%, hsla(266, 60%, 14%, 1) 0, transparent 50%)
-    }
-.text-gradient {
-    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent
-    }
-.grain-overlay {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA1j_FTyg7f40t6K8WjenXmlCKkiakJeViqHGdZtBHXd53pvGYFwAsA_-o6po_yXIwpXMET56hB3l6AX0eU4pMkvjNaGkW8gmAvd9SsDIDpFRm12S9biqXsjnapGO6_AeTTLRGnpAl_kgmW2M1uw118U5e8pnqj8NQVkPn6Kh2oky0jdpuLuwvDOutv-cRLJ9Flj_8Bjcm0ECsIbqgphTtf7WTdsVkaE2_kacsHLJnfFAuO9qAuCiGyfRetXh90SVhqT1NOW_K_Qyo);
-    pointer-events: none;
-    mix-blend-mode: overlay
-    }.shape-cube {
-    transform-style: preserve-3d;
-    transform: rotatex(45deg) rotatey(45deg)
-    }::-webkit-scrollbar {
-    width: 8px
-    }
-::-webkit-scrollbar-track {
-    background: #f1f5f9
-    }
-::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px
-    }</style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&amp;display=swap" rel="stylesheet"/>
 </head>
 <body class="bg-slate-50 text-slate-900 font-display overflow-x-hidden selection:bg-accent-violet selection:text-white">
 <nav class="sticky top-0 z-50 w-full glass-card border-b border-white/50">

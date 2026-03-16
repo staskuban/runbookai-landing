@@ -1,4 +1,14 @@
-# Multi-stage build for optimized JAMstack deployment
+# Stage 1: Build Tailwind CSS
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+COPY tailwind.config.js ./
+COPY src/ ./src/
+COPY public/ ./public/
+RUN npm run build
+
+# Stage 2: Serve via nginx
 FROM nginx:1.25-alpine
 
 # Install gettext for envsubst
@@ -10,8 +20,8 @@ RUN rm /etc/nginx/conf.d/default.conf
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/
 
-# Copy static files
-COPY public/ /usr/share/nginx/html/
+# Copy static files from builder
+COPY --from=builder /app/public/ /usr/share/nginx/html/
 
 # Copy index.html as template for environment variable substitution
 RUN mv /usr/share/nginx/html/index.html /usr/share/nginx/html/index.html.template
@@ -29,8 +39,5 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 EXPOSE 2000
 
-# Set entrypoint
 ENTRYPOINT ["/docker-entrypoint.sh"]
-
-# Run nginx
 CMD ["nginx", "-g", "daemon off;"]
